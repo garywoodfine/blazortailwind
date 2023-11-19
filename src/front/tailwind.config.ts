@@ -1,14 +1,11 @@
-import type { Config } from 'tailwindcss'
-
 export default {
   mode:'jit',
   content: [
-      './wwwroot/**/*.html',
-      './**/*.razor',
+        './**/*.{razor, html}',
   ],
   theme: {
     extend: {},
   },
   plugins: [],
-} satisfies Config
+} 
 
