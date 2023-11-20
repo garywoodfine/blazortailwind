@@ -3,13 +3,13 @@
         <TailwindBuild>true</TailwindBuild>
     </PropertyGroup>
      <Target Name="NpmInstall" BeforeTargets="TailwindCSS" Inputs="$(MSBuildThisFileDirectory)package.json" Outputs="$(MSBuildThisFileDirectory)package-lock.json">
-        <Message Text=" Install Check for node Starting..." Importance="high"></Message>
+        <Message Text=" Install Check for node " Importance="high"></Message>
         <Exec Command="node -v" ContinueOnError="true" StandardOutputImportance="low">
             <Output TaskParameter="ExitCode" PropertyName="error" />
         </Exec>
-        <Error Condition="'$(error)' != '0'" Text="install node.js please !" />
+        <Error Condition="'$(error)' != '0'" Text="Node.JS is required to install Tailwind and associated libraries,  Node is not present" />
         <Exec Command="npm install" />
-        <Message Text="Npm Install Check Finished !" Importance="high"></Message>
+        <Message Text="Npm Install Check completed successfully!" Importance="high"></Message>
     </Target>
     <Target Name="TailwindCSS" AfterTargets="BeforeBuild" Condition="'$(TailwindBuild)' == 'true'">
         <Message Text="TailwindCSS Starting..." Importance="high"></Message>

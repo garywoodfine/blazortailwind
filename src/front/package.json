@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "build": "npx tailwindcss --minify --config ./tailwind.config.ts  -i ./styles/app.css -o ./wwwroot/css/app.min.css",
-    "watch": "npx tailwindcss --watch --config ./tailwind.config.ts  -i ./styles/app.css -o ./wwwroot/css/app.min.css",
+    "build": "npx tailwindcss --minify  --config ./tailwind.config.ts  -i ./styles/app.css -o ./wwwroot/css/app.min.css",
     "publish": "npx tailwindcss --minify --config ./tailwind.config.ts -i ./styles/app.css -o ./wwwroot/css/app.min.css"
   },
   "dependencies": {
